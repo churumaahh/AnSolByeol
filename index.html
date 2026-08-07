@@ -387,6 +387,45 @@
       min-height: 640px;
     }
 
+    .closing-card {
+      grid-column: 1 / -1;
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      padding: clamp(28px, 4.5vw, 58px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 9% 18%, rgba(255, 232, 92, .95) 0 1.5px, transparent 2px),
+        radial-gradient(circle at 78% 22%, rgba(255, 255, 255, .72) 0 1px, transparent 1.6px),
+        radial-gradient(circle at 61% 72%, rgba(255, 232, 92, .78) 0 1.2px, transparent 1.8px),
+        radial-gradient(circle at 92% 82%, rgba(255, 255, 255, .58) 0 1px, transparent 1.6px),
+        linear-gradient(125deg, #06111d, #10243a, #17314b, #0a1a2d, #06111d);
+      background-size: 180px 180px, 220px 220px, 260px 260px, 300px 300px, 320% 320%;
+      box-shadow: var(--shadow);
+    }
+
+    .closing-cloud {
+      width: min(560px, 90%);
+      aspect-ratio: 399 / 303;
+      display: grid;
+      place-items: center;
+      padding: 14% 12% 7%;
+      background: url("./assets/cloud-cutout.png") center / contain no-repeat;
+      filter: drop-shadow(0 18px 22px rgba(0, 0, 0, .28));
+    }
+
+    .closing-cloud p {
+      color: #07131f;
+      font-family: "Griun Fromsol", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4.8rem);
+      line-height: 1.22;
+      font-weight: 400;
+      text-align: center;
+      word-break: keep-all;
+      transform: translateY(10%);
+    }
+
     .photo-card img {
       position: absolute;
       inset: 0;
@@ -469,6 +508,10 @@
 
       .photo-card.is-full {
         grid-column: 1 / -1;
+      }
+
+      .closing-card {
+        min-height: 320px;
       }
     }
 
@@ -582,6 +625,19 @@
       .photo-card.is-full {
         grid-column: 1 / -1;
         min-height: 430px;
+      }
+
+      .closing-card {
+        min-height: 260px;
+        padding: 22px;
+      }
+
+      .closing-cloud {
+        width: min(360px, 96%);
+      }
+
+      .closing-cloud p {
+        font-size: clamp(1.75rem, 9vw, 3rem);
       }
 
       .caption p {
@@ -763,6 +819,11 @@
               <span>#12 TRAVEL</span>
               <h3>여행 속에서 넓어진 시야</h3>
               <p>가족과 낯선 공간을 함께 경험하며 새로운 환경을 받아들이는 유연함을 키웠습니다.</p>
+            </div>
+          </article>
+          <article class="closing-card" aria-label="마무리 인사">
+            <div class="closing-cloud">
+              <p>감사합니다.<br>지원자 안솔별</p>
             </div>
           </article>
         </div>
