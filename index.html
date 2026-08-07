@@ -247,29 +247,26 @@
       font-size: clamp(1.8rem, 3.2vw, 2.9rem);
       font-weight: 900;
       line-height: 1.08;
-      padding-bottom: 12px;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
       word-break: keep-all;
     }
 
-    .section-head h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: min(180px, 82%);
-      height: 4px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--teal), #5ab9ad, #d7eceb);
+    .section-head h2::before {
+      content: "★";
+      flex: 0 0 auto;
+      color: #f4bd22;
+      font-size: .78em;
+      line-height: 1;
+      transform: translateY(-.04em);
     }
 
     .title-accent {
       color: transparent;
-      background: linear-gradient(100deg, #143b58, #208b8a, #63c7b9, #18384f, #208b8a);
+      background: linear-gradient(100deg, #f2a900, #e95f2f, #c23b7a, #247d7b, #f2a900);
       background-size: 260% 100%;
       -webkit-background-clip: text;
       background-clip: text;
       animation: titleGradient 3.8s ease-in-out infinite;
+      text-shadow: none;
     }
 
     @keyframes titleGradient {
