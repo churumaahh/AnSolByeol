@@ -151,10 +151,9 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
-      gap: 20px;
+      gap: 28px;
       align-items: stretch;
-      min-height: 420px;
+      min-height: 360px;
       padding: clamp(24px, 4vw, 46px);
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -183,6 +182,15 @@
       word-break: keep-all;
     }
 
+    .hero-keyword {
+      color: transparent;
+      background: linear-gradient(100deg, #ffffff, #a8ebe7, #e4fffb, #ffffff);
+      background-size: 240% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: titleGradient 3.8s ease-in-out infinite;
+    }
+
     .hero p {
       max-width: 760px;
       color: rgba(255, 255, 255, .8);
@@ -193,29 +201,27 @@
 
     .hero-index {
       display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
     }
 
     .index-card {
-      min-height: 100px;
+      min-height: 104px;
       display: grid;
-      align-content: end;
+      align-content: center;
       padding: 16px;
       border: 1px solid rgba(255, 255, 255, .24);
       border-radius: 8px;
       background: rgba(255, 255, 255, .09);
     }
 
-    .index-card strong {
-      font-size: 1.65rem;
-      line-height: 1;
-    }
-
     .index-card span {
-      margin-top: 8px;
-      color: rgba(255, 255, 255, .76);
-      font-size: .82rem;
+      color: #ffffff;
+      font-size: clamp(.9rem, 1.1vw, 1rem);
       font-weight: 900;
+      line-height: 1.35;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
     }
 
     .section {
@@ -232,10 +238,52 @@
     }
 
     .section-head h2 {
+      position: relative;
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: .28em;
       color: var(--navy);
-      font-size: clamp(1.45rem, 2.4vw, 2.15rem);
-      line-height: 1.25;
+      font-size: clamp(1.8rem, 3.2vw, 2.9rem);
+      font-weight: 900;
+      line-height: 1.08;
+      padding-bottom: 12px;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
       word-break: keep-all;
+    }
+
+    .section-head h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: min(180px, 82%);
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--teal), #5ab9ad, #d7eceb);
+    }
+
+    .title-accent {
+      color: transparent;
+      background: linear-gradient(100deg, #143b58, #208b8a, #63c7b9, #18384f, #208b8a);
+      background-size: 260% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: titleGradient 3.8s ease-in-out infinite;
+    }
+
+    @keyframes titleGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .section-head p {
@@ -294,8 +342,10 @@
     }
 
     .photo-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
       height: 100%;
-      min-height: inherit;
       object-fit: cover;
       object-position: var(--pos, center);
       filter: saturate(.96) contrast(1.02) brightness(.98);
@@ -311,6 +361,7 @@
       padding: clamp(18px, 2.2vw, 28px);
       background: linear-gradient(180deg, transparent, rgba(16, 34, 48, .8) 22%, rgba(16, 34, 48, .96));
       color: #ffffff;
+      z-index: 1;
     }
 
     .caption span {
@@ -354,7 +405,9 @@
         height: auto;
         min-height: 0;
         grid-template-columns: 140px minmax(0, 1fr);
+        grid-template-rows: auto;
         align-items: start;
+        align-content: start;
       }
 
       .hero {
@@ -380,22 +433,33 @@
       }
 
       .profile {
-        grid-template-columns: 100px minmax(0, 1fr);
-        gap: 14px;
-        padding: 14px;
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 10px;
+        padding: 10px;
       }
 
       h1 {
-        font-size: 1.35rem;
+        font-size: 1.28rem;
+      }
+
+      .eyebrow {
+        padding: 5px 7px;
+        font-size: .66rem;
+      }
+
+      .profile-copy {
+        gap: 7px;
       }
 
       .profile-copy p {
-        display: none;
+        display: block;
+        font-size: .76rem;
+        line-height: 1.45;
       }
 
       .tag {
-        padding: 6px 7px;
-        font-size: .7rem;
+        padding: 5px 6px;
+        font-size: .66rem;
       }
 
       .hero {
@@ -408,11 +472,25 @@
       }
 
       .hero-index {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .index-card {
+        min-height: 72px;
+        padding: 10px 8px;
+      }
+
+      .index-card span {
+        font-size: .72rem;
       }
 
       .section-head {
         display: grid;
+      }
+
+      .section-head h2 {
+        font-size: clamp(1.65rem, 8vw, 2.2rem);
       }
 
       .section-head p {
@@ -434,6 +512,13 @@
 
       .caption p {
         font-size: .9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-keyword,
+      .title-accent {
+        animation: none;
       }
     }
   </style>
@@ -460,19 +545,20 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <h2 id="hero-title">따뜻함이 남는 순간들</h2>
+          <h2 id="hero-title">장면마다 담긴 <span class="hero-keyword">나의 모습</span></h2>
           <p>친구들과의 관계, 실습 현장에서의 모습, 가족과의 시간까지 한 사람의 성향이 드러나는 장면들을 차분하게 정리했습니다.</p>
         </div>
         <div class="hero-index" aria-label="사진 구성">
-          <div class="index-card"><strong>01</strong><span>친구들과의 나의 모습</span></div>
-          <div class="index-card"><strong>02</strong><span>실습에서의 나의 모습</span></div>
-          <div class="index-card"><strong>03</strong><span>가족들과의 나의 모습</span></div>
+          <div class="index-card"><span>친구들과의 나의 모습</span></div>
+          <div class="index-card"><span>실습에서의 나의 모습</span></div>
+          <div class="index-card"><span>일을 마친 뒤의 나의 모습</span></div>
+          <div class="index-card"><span>가족들과의 나의 모습</span></div>
         </div>
       </section>
 
       <section class="section" aria-labelledby="people-title">
         <div class="section-head">
-          <h2 id="people-title">친구들과의 나의 모습</h2>
+          <h2 id="people-title">친구들과의 <span class="title-accent">나의 모습</span></h2>
           <p>함께 준비하고, 맡은 역할을 해내고, 관계를 오래 이어가는 모습에서 안정적인 소통 방식을 보여줍니다.</p>
         </div>
         <div class="story-grid">
@@ -513,7 +599,7 @@
 
       <section class="section" aria-labelledby="practice-title">
         <div class="section-head">
-          <h2 id="practice-title">실습에서의 나의 모습</h2>
+          <h2 id="practice-title">실습에서의 <span class="title-accent">나의 모습</span></h2>
           <p>아이들의 눈높이에 맞춰 다가가고 반응을 살피는 과정에서 세심함과 따뜻한 응대 태도를 보여줍니다.</p>
         </div>
         <div class="story-grid">
@@ -546,7 +632,7 @@
 
       <section class="section" aria-labelledby="after-title">
         <div class="section-head">
-          <h2 id="after-title">일을 마친 뒤의 나의 모습</h2>
+          <h2 id="after-title">일을 마친 뒤의 <span class="title-accent">나의 모습</span></h2>
           <p>꾸준히 좋은 컨디션을 유지하기 위해 스스로를 회복시키는 방식도 중요한 태도라고 생각합니다.</p>
         </div>
         <div class="story-grid">
@@ -563,10 +649,18 @@
 
       <section class="section" aria-labelledby="family-title">
         <div class="section-head">
-          <h2 id="family-title">가족들과 나의 모습</h2>
+          <h2 id="family-title">가족들과 <span class="title-accent">나의 모습</span></h2>
           <p>가까운 사람들과의 관계 속에서 다정함, 배려, 안정감을 배우고 그것을 일상에서도 자연스럽게 실천합니다.</p>
         </div>
         <div class="story-grid">
+          <article class="photo-card is-full">
+            <img src="./assets/gallery/12_family-photo.jpg" alt="가족사진" style="--pos:center 45%">
+            <div class="caption">
+              <span>12 / FAMILY PHOTO</span>
+              <h3>함께 모이면 안정되는 사람</h3>
+              <p>가족사진 속 자연스러운 표정은 믿고 기대는 관계에서 나옵니다. 가까운 사람들과 조화롭게 지내는 힘을 보여줍니다.</p>
+            </div>
+          </article>
           <article class="photo-card is-half">
             <img src="./assets/gallery/09_mother-bond.jpg" alt="어머님과 끈끈한 사이" style="--pos:center 44%">
             <div class="caption">
@@ -583,7 +677,7 @@
               <p>가족과 보내는 시간 속에서 자연스럽게 책임감과 배려를 배웠습니다. 서로를 살피는 분위기가 익숙한 사람입니다.</p>
             </div>
           </article>
-          <article class="photo-card">
+          <article class="photo-card is-half">
             <img src="./assets/gallery/11_family-date.jpg" alt="가족들과 데이트" style="--pos:center 48%">
             <div class="caption">
               <span>11 / FAMILY DATE</span>
@@ -591,15 +685,7 @@
               <p>가족과의 짧은 외출에서도 즐거움을 나누며 관계를 다집니다. 주변 사람을 편안하게 챙기는 모습이 드러납니다.</p>
             </div>
           </article>
-          <article class="photo-card is-full">
-            <img src="./assets/gallery/12_family-photo.jpg" alt="가족사진" style="--pos:center 45%">
-            <div class="caption">
-              <span>12 / FAMILY PHOTO</span>
-              <h3>함께 모이면 안정되는 사람</h3>
-              <p>가족사진 속 자연스러운 표정은 믿고 기대는 관계에서 나옵니다. 가까운 사람들과 조화롭게 지내는 힘을 보여줍니다.</p>
-            </div>
-          </article>
-          <article class="photo-card">
+          <article class="photo-card is-half">
             <img src="./assets/gallery/13_family-travel.jpg" alt="가족들과 여행" style="--pos:center 60%">
             <div class="caption">
               <span>13 / TRAVEL</span>
