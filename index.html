@@ -15,6 +15,14 @@
   <meta name="twitter:image" content="./assets/og-image.png">
   <title>안솔별 포트폴리오</title>
   <style>
+    @font-face {
+      font-family: "Griun Fromsol";
+      src: url("./assets/fonts/Griun_Fromsol-Rg.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       color-scheme: dark;
       --bg: #07131f;
@@ -253,8 +261,9 @@
       display: block;
       color: #0b2639;
       width: 100%;
-      font-size: clamp(1.48rem, 1.95vw, 1.82rem);
-      font-weight: 900;
+      font-family: "Griun Fromsol", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-size: clamp(calc(1.48rem + 10px), calc(1.95vw + 10px), calc(1.82rem + 10px));
+      font-weight: 400;
       line-height: 1;
       word-break: keep-all;
       overflow-wrap: normal;
@@ -518,7 +527,7 @@
       }
 
       .index-label {
-        font-size: 1.16rem;
+        font-size: calc(1.16rem + 10px);
         transform: translateY(20px);
       }
 
@@ -567,9 +576,8 @@
       <div class="profile-copy">
         <span class="eyebrow">PORTFOLIO</span>
         <h1>안솔별</h1>
-        <p>사진을 통해 순간을 기록하고, 그 안에 담긴 저의 이야기를 담았습니다. 일상 속 다양한 모습과 경험을 사진으로 표현한 포트폴리오입니다.</p>
+        <p>사진을 통해 순간을 기록하고, 그 안에 담긴 저만의 이야기를 포트폴리오로 표현하였습니다.</p>
         <div class="tags" aria-label="핵심 키워드">
-          <span class="tag">관찰</span>
           <span class="tag">소통</span>
           <span class="tag">책임감</span>
           <span class="tag">친화력</span>
@@ -584,7 +592,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <h2 id="hero-title"><span class="hero-keyword">작은 <span class="hero-star">별</span>, 안솔별</span></h2>
-          <p>사진으로 일상과 주변의 모습을 기록한 포트폴리오입니다.</p>
+          <p>주변의 일상적인 상황과 순간들을 사진으로 기록하여 그 속에서 발견한 저의 모습을 담았습니다.</p>
         </div>
         <div class="hero-index" aria-label="사진 구성">
           <div class="index-card">
@@ -608,8 +616,8 @@
 
       <section class="section" aria-labelledby="people-title">
         <div class="section-head">
-          <h2 id="people-title">친구들과의 <span class="title-accent">나의 모습</span></h2>
-          <p>함께 준비하고, 맡은 역할을 해내고, 관계를 오래 이어가는 모습에서 안정적인 소통 방식을 보여줍니다.</p>
+          <h2 id="people-title">친구들과 함께인 <span class="title-accent">나의 모습</span></h2>
+          <p>함께 준비하고, 맡은 역할을 해내고, 관계를 오래 이어가는 모습에서 서로의 생각을 이해하고 조율하는 소통 방식을 배웠습니다.</p>
         </div>
         <div class="story-grid">
           <article class="photo-card is-full">
@@ -617,7 +625,7 @@
             <div class="caption">
               <span>01 / TEAM PRACTICE</span>
               <h3>발표 연습으로 다진 전달력</h3>
-              <p>팀원들과 의견을 맞추며 정확히 전달하는 연습을 반복했습니다. 차분히 설명하고 흐름을 정리하는 태도를 보여주는 장면입니다.</p>
+              <p>팀원들과 의견을 맞추며 발표 전 연습하는 장면입니다.</p>
             </div>
           </article>
           <article class="photo-card is-half">
@@ -625,7 +633,7 @@
             <div class="caption">
               <span>02 / LEADERSHIP</span>
               <h3>역할을 맡으면 끝까지 책임지는 태도</h3>
-              <p>학생회 활동을 통해 먼저 움직이고 주변을 살피는 리더십을 배웠습니다. 함께 움직이는 조직 안에서 필요한 책임감을 익혔습니다.</p>
+              <p>학생회 활동을 통해 먼저 움직이고 주변을 살피는 리더십을 배웠습니다.</p>
             </div>
           </article>
           <article class="photo-card is-half">
@@ -633,7 +641,7 @@
             <div class="caption">
               <span>03 / COMMUNICATION</span>
               <h3>편안한 관계 속에서 드러나는 소통</h3>
-              <p>친구들과 자연스럽게 어울리는 모습에서 밝고 부드러운 소통 방식을 볼 수 있습니다. 함께 있을 때 분위기를 편안하게 만드는 힘이 있습니다.</p>
+              <p>친구들과 함께 있을 때 분위기를 편안하게 만드는 힘이 있습니다!</p>
             </div>
           </article>
         </div>
@@ -642,7 +650,7 @@
       <section class="section" aria-labelledby="practice-title">
         <div class="section-head">
           <h2 id="practice-title">일하는 <span class="title-accent">나의 모습</span></h2>
-          <p>아이들의 눈높이에 맞춰 다가가고 반응을 살피는 과정에서 세심함과 따뜻한 응대 태도를 보여줍니다.</p>
+          <p>아이들의 눈높이에 맞춰 다가가고 반응을 살피는 따뜻함</p>
         </div>
         <div class="story-grid">
           <article class="photo-card is-full">
@@ -650,7 +658,7 @@
             <div class="caption">
               <span>04 / WARM APPROACH</span>
               <h3>웃음으로 먼저 다가가는 태도</h3>
-              <p>낯선 환경에서도 아이들이 편안함을 느낄 수 있도록 밝게 다가갔습니다. 따뜻한 분위기를 만드는 장점을 보여줍니다.</p>
+              <p>낯선 환경에서도 아이들이 편안함을 느낄 수 있도록 밝게 다가갔습니다!</p>
             </div>
           </article>
           <article class="photo-card is-half">
@@ -658,7 +666,7 @@
             <div class="caption">
               <span>05 / PRACTICE</span>
               <h3>아이들의 눈높이에 맞춘 실습</h3>
-              <p>아이들과 가까이 마주하며 표정과 반응을 살피는 시간을 보냈습니다. 작은 변화에도 관심을 기울이는 세심함을 배웠습니다.</p>
+              <p>작은 변화에도 관심을 기울이는 세심함을 배웠습니다!</p>
             </div>
           </article>
           <article class="photo-card is-half">
@@ -666,7 +674,7 @@
             <div class="caption">
               <span>06 / CAREFUL OBSERVATION</span>
               <h3>가까이에서 반응을 살피는 섬세함</h3>
-              <p>아이와 몸을 맞대고 호흡을 맞추며 신뢰를 쌓았습니다. 상대의 속도에 맞춰 기다리는 태도를 익혔습니다.</p>
+              <p>아이와 몸을 맞대고 호흡을 맞추며 신뢰를 쌓았습니다! 속도에 맞춰 기다리는 태도를 익혔습니다!</p>
             </div>
           </article>
         </div>
@@ -683,7 +691,7 @@
             <div class="caption">
               <span>07 / RECOVERY</span>
               <h3>일을 마친 뒤 회복하는 균형</h3>
-              <p>맡은 일을 마친 후에는 좋아하는 시간으로 에너지를 회복합니다. 꾸준히 일하기 위해 스스로를 관리하는 모습을 담았습니다.</p>
+              <p>맡은 일을 마친 후에는 좋아하는 시간으로 보통 에너지를 회복합니다! 꾸준히 일하기 위해 스스로를 관리하는 모습을 담았습니다.</p>
             </div>
           </article>
         </div>
@@ -692,7 +700,7 @@
       <section class="section" aria-labelledby="family-title">
         <div class="section-head">
           <h2 id="family-title">가족과 함께하는 <span class="title-accent">나의 모습</span></h2>
-          <p>가까운 사람들과의 관계 속에서 다정함, 배려, 안정감을 배우고 그것을 일상에서도 자연스럽게 실천합니다.</p>
+          <p>가족과의 관계 속에서 다정함, 배려, 안정감을 배웠습니다.</p>
         </div>
         <div class="story-grid">
           <article class="photo-card is-full">
@@ -700,7 +708,7 @@
             <div class="caption">
               <span>08 / FAMILY PHOTO</span>
               <h3>함께 모이면 안정되는 사람</h3>
-              <p>가족사진 속 자연스러운 표정은 믿고 기대는 관계에서 나옵니다. 가까운 사람들과 조화롭게 지내는 힘을 보여줍니다.</p>
+              <p>가족의 힘!</p>
             </div>
           </article>
           <article class="photo-card is-half">
@@ -708,7 +716,7 @@
             <div class="caption">
               <span>09 / FAMILY BOND</span>
               <h3>어머님과의 가까운 관계</h3>
-              <p>가족 안에서 배운 다정함과 존중은 사람을 대하는 기본 태도가 되었습니다. 가까운 사람에게도 변함없이 성실한 모습을 보여줍니다.</p>
+              <p>가족 안에서 배운 다정함과 존중은 사람을 대하는 기본 태도가 되었습니다! 가까운 사람에게도 변함없이 성실한 모습!</p>
             </div>
           </article>
           <article class="photo-card is-half">
@@ -728,11 +736,11 @@
             </div>
           </article>
           <article class="photo-card is-half">
-            <img src="./assets/gallery/13_family-travel.jpg" alt="가족들과 여행" style="--pos:center 60%">
+            <img src="./assets/gallery/13_family-travel-beach.jpg" alt="가족들과 여행" style="--pos:center 76%">
             <div class="caption">
               <span>12 / TRAVEL</span>
               <h3>여행 속에서 넓어진 시야</h3>
-              <p>가족과 낯선 공간을 함께 경험하며 새로운 환경을 받아들이는 유연함을 키웠습니다. 차분히 보고 배우는 태도를 담았습니다.</p>
+              <p>가족과 낯선 공간을 함께 경험하며 새로운 환경을 받아들이는 유연함을 키웠습니다!</p>
             </div>
           </article>
         </div>
