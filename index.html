@@ -17,7 +17,9 @@
   <style>
     @font-face {
       font-family: "Griun Fromsol";
-      src: url("./assets/fonts/Griun_Fromsol-Rg.ttf") format("truetype");
+      src:
+        url("./Griun_Fromsol-Rg.ttf") format("truetype"),
+        url("./assets/fonts/Griun_Fromsol-Rg.ttf") format("truetype");
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -246,7 +248,7 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: min(194px, 142%);
+      width: min(176px, 126%);
       max-width: none;
       height: auto;
       transform: translate(-50%, -50%);
@@ -262,7 +264,7 @@
       color: #0b2639;
       width: 100%;
       font-family: "Griun Fromsol", "Noto Sans KR", "Malgun Gothic", sans-serif;
-      font-size: clamp(calc(1.48rem + 10px), calc(1.95vw + 10px), calc(1.82rem + 10px));
+      font-size: clamp(1.36rem, 1.75vw, 1.68rem);
       font-weight: 400;
       line-height: 1;
       word-break: keep-all;
@@ -513,22 +515,22 @@
 
       .hero-index {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 2px;
+        gap: 6px;
         padding: 2px 0 0;
       }
 
       .index-card {
-        min-height: 112px;
-        padding: 20px 1px 14px;
+        min-height: 98px;
+        padding: 16px 1px 12px;
       }
 
       .cloud-image {
-        width: 154px;
+        width: clamp(92px, 22vw, 118px);
       }
 
       .index-label {
-        font-size: calc(1.16rem + 10px);
-        transform: translateY(20px);
+        font-size: clamp(1.02rem, 3.1vw, 1.22rem);
+        transform: translateY(15px);
       }
 
       .index-me {
@@ -580,10 +582,8 @@
         <div class="tags" aria-label="핵심 키워드">
           <span class="tag">소통</span>
           <span class="tag">책임감</span>
-          <span class="tag">친화력</span>
           <span class="tag">배려</span>
           <span class="tag">성실함</span>
-          <span class="tag">공감력</span>
         </div>
       </div>
     </aside>
@@ -674,7 +674,7 @@
             <div class="caption">
               <span>06 / CAREFUL OBSERVATION</span>
               <h3>가까이에서 반응을 살피는 섬세함</h3>
-              <p>아이와 몸을 맞대고 호흡을 맞추며 신뢰를 쌓았습니다! 속도에 맞춰 기다리는 태도를 익혔습니다!</p>
+              <p>아이와 몸을 맞대고 호흡을 맞추며 신뢰를 쌓았습니다.</p>
             </div>
           </article>
         </div>
@@ -683,7 +683,7 @@
       <section class="section" aria-labelledby="after-title">
         <div class="section-head">
           <h2 id="after-title">퇴근 후의 <span class="title-accent">나의 모습</span></h2>
-          <p>꾸준히 좋은 컨디션을 유지하기 위해 스스로를 회복시키는 방식도 중요한 태도라고 생각합니다.</p>
+          <p>컨디션 유지를 위해 저만의 방식으로 여가 시간을 통해 충전합니다.</p>
         </div>
         <div class="story-grid">
           <article class="photo-card is-full">
@@ -691,7 +691,7 @@
             <div class="caption">
               <span>07 / RECOVERY</span>
               <h3>일을 마친 뒤 회복하는 균형</h3>
-              <p>맡은 일을 마친 후에는 좋아하는 시간으로 보통 에너지를 회복합니다! 꾸준히 일하기 위해 스스로를 관리하는 모습을 담았습니다.</p>
+              <p>맡은 일을 마친 후에는 좋아하는 시간으로 보통 에너지를 회복하는 편입니다!</p>
             </div>
           </article>
         </div>
@@ -724,7 +724,7 @@
             <div class="caption">
               <span>10 / HARMONY</span>
               <h3>함께 있을 때 더 밝아지는 가족</h3>
-              <p>가족과 보내는 시간 속에서 자연스럽게 책임감과 배려를 배웠습니다. 서로를 살피는 분위기가 익숙한 사람입니다.</p>
+              <p>가족과 보내는 시간 속에서 자연스럽게 배려를 배웠습니다.</p>
             </div>
           </article>
           <article class="photo-card is-half">
@@ -732,7 +732,7 @@
             <div class="caption">
               <span>11 / FAMILY DATE</span>
               <h3>작은 데이트도 소중히 여기는 마음</h3>
-              <p>가족과의 짧은 외출에서도 즐거움을 나누며 관계를 다집니다. 주변 사람을 편안하게 챙기는 모습이 드러납니다.</p>
+              <p>즐거움을 나누며 에너지를 충전하는 편입니다.</p>
             </div>
           </article>
           <article class="photo-card is-half">
