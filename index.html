@@ -7,22 +7,22 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="안솔별 포트폴리오">
   <meta property="og:description" content="사진으로 정리한 활동과 관계의 기록">
-  <meta property="og:image" content="./assets/og-image.png">
-  <meta property="og:image:type" content="image/png">
+  <meta property="og:image" content="./assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="안솔별 포트폴리오">
   <meta name="twitter:description" content="사진으로 정리한 활동과 관계의 기록">
-  <meta name="twitter:image" content="./assets/og-image.png">
+  <meta name="twitter:image" content="./assets/og-image.jpg">
   <title>안솔별 포트폴리오</title>
+  <link rel="preload" href="./assets/fonts/Griun_Fromsol-Rg.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/cloud-cutout.png" as="image" type="image/png">
   <style>
     @font-face {
       font-family: "Griun Fromsol";
-      src:
-        url("./Griun_Fromsol-Rg.ttf") format("truetype"),
-        url("./assets/fonts/Griun_Fromsol-Rg.ttf") format("truetype");
+      src: url("./assets/fonts/Griun_Fromsol-Rg.ttf") format("truetype");
       font-weight: 400;
       font-style: normal;
-      font-display: swap;
+      font-display: block;
     }
 
     :root {
@@ -33,10 +33,15 @@
       --sub: #aebfc9;
       --line: rgba(180, 206, 220, .22);
       --navy: #f0f7fb;
-      --teal: #7ed8d4;
-      --mint: rgba(126, 216, 212, .13);
       --panel: #172a3a;
       --shadow: 0 22px 58px rgba(0, 0, 0, .34);
+      --sky-bg:
+        radial-gradient(circle at 9% 18%, rgba(255, 232, 92, .95) 0 1.5px, transparent 2px),
+        radial-gradient(circle at 78% 22%, rgba(255, 255, 255, .72) 0 1px, transparent 1.6px),
+        radial-gradient(circle at 61% 72%, rgba(255, 232, 92, .78) 0 1.2px, transparent 1.8px),
+        radial-gradient(circle at 92% 82%, rgba(255, 255, 255, .58) 0 1px, transparent 1.6px),
+        linear-gradient(125deg, #06111d, #10243a, #17314b, #0a1a2d, #06111d);
+      --sky-size: 180px 180px, 220px 220px, 260px 260px, 300px 300px, 320% 320%;
     }
 
     * {
@@ -91,13 +96,8 @@
       padding: 16px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background:
-        radial-gradient(circle at 9% 18%, rgba(255, 232, 92, .95) 0 1.5px, transparent 2px),
-        radial-gradient(circle at 78% 22%, rgba(255, 255, 255, .72) 0 1px, transparent 1.6px),
-        radial-gradient(circle at 61% 72%, rgba(255, 232, 92, .78) 0 1.2px, transparent 1.8px),
-        radial-gradient(circle at 92% 82%, rgba(255, 255, 255, .58) 0 1px, transparent 1.6px),
-        linear-gradient(125deg, #06111d, #10243a, #17314b, #0a1a2d, #06111d);
-      background-size: 180px 180px, 220px 220px, 260px 260px, 300px 300px, 320% 320%;
+      background: var(--sky-bg);
+      background-size: var(--sky-size);
       box-shadow: var(--shadow);
     }
 
@@ -175,13 +175,8 @@
       padding: clamp(22px, 3vw, 34px);
       border: 1px solid var(--line);
       border-radius: 8px;
-      background:
-        radial-gradient(circle at 9% 18%, rgba(255, 232, 92, .95) 0 1.5px, transparent 2px),
-        radial-gradient(circle at 78% 22%, rgba(255, 255, 255, .72) 0 1px, transparent 1.6px),
-        radial-gradient(circle at 61% 72%, rgba(255, 232, 92, .78) 0 1.2px, transparent 1.8px),
-        radial-gradient(circle at 92% 82%, rgba(255, 255, 255, .58) 0 1px, transparent 1.6px),
-        linear-gradient(125deg, #06111d, #10243a, #17314b, #0a1a2d, #06111d);
-      background-size: 180px 180px, 220px 220px, 260px 260px, 300px 300px, 320% 320%;
+      background: var(--sky-bg);
+      background-size: var(--sky-size);
       color: #ffffff;
       box-shadow: var(--shadow);
     }
@@ -190,11 +185,6 @@
       display: grid;
       align-content: start;
       gap: 9px;
-    }
-
-    .hero .eyebrow {
-      background: rgba(255, 255, 255, .13);
-      color: #d5fbf8;
     }
 
     .hero h2 {
@@ -244,13 +234,15 @@
       overflow: visible;
     }
 
-    .cloud-image {
+    .index-card::before {
+      content: "";
       position: absolute;
       left: 50%;
       top: 50%;
       width: min(176px, 126%);
       max-width: none;
-      height: auto;
+      aspect-ratio: 397 / 303;
+      background: url("./assets/cloud-cutout.png") center / contain no-repeat;
       transform: translate(-50%, -50%);
       filter: drop-shadow(0 14px 18px rgba(0, 0, 0, .18));
       z-index: 0;
@@ -273,14 +265,6 @@
       text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
       transform: translateY(17px);
       z-index: 1;
-    }
-
-    .index-me {
-      display: inline-block;
-      margin-top: 0;
-      color: #0b2639;
-      -webkit-text-fill-color: #0b2639;
-      font-size: inherit;
     }
 
     .section {
@@ -359,27 +343,9 @@
       box-shadow: var(--shadow);
     }
 
-    .photo-card.is-large {
-      grid-column: span 7;
-      min-height: 610px;
-    }
-
-    .photo-card.is-wide {
-      grid-column: span 5;
-      min-height: 610px;
-    }
-
     .photo-card.is-half {
       grid-column: span 6;
       min-height: 480px;
-    }
-
-    .photo-card.is-tall {
-      min-height: 620px;
-    }
-
-    .photo-card.is-landscape {
-      min-height: 620px;
     }
 
     .photo-card.is-full {
@@ -395,13 +361,8 @@
       padding: clamp(28px, 4.5vw, 58px);
       border: 1px solid var(--line);
       border-radius: 8px;
-      background:
-        radial-gradient(circle at 9% 18%, rgba(255, 232, 92, .95) 0 1.5px, transparent 2px),
-        radial-gradient(circle at 78% 22%, rgba(255, 255, 255, .72) 0 1px, transparent 1.6px),
-        radial-gradient(circle at 61% 72%, rgba(255, 232, 92, .78) 0 1.2px, transparent 1.8px),
-        radial-gradient(circle at 92% 82%, rgba(255, 255, 255, .58) 0 1px, transparent 1.6px),
-        linear-gradient(125deg, #06111d, #10243a, #17314b, #0a1a2d, #06111d);
-      background-size: 180px 180px, 220px 220px, 260px 260px, 300px 300px, 320% 320%;
+      background: var(--sky-bg);
+      background-size: var(--sky-size);
       box-shadow: var(--shadow);
     }
 
@@ -470,16 +431,6 @@
       word-break: keep-all;
     }
 
-    .divider-note {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--paper);
-      color: var(--sub);
-      line-height: 1.75;
-      word-break: keep-all;
-    }
-
     @media (max-width: 1100px) {
       .page {
         grid-template-columns: 1fr;
@@ -500,8 +451,6 @@
       }
 
       .photo-card,
-      .photo-card.is-large,
-      .photo-card.is-wide,
       .photo-card.is-half {
         grid-column: span 6;
       }
@@ -584,17 +533,13 @@
         padding: 16px 1px 12px;
       }
 
-      .cloud-image {
+      .index-card::before {
         width: clamp(92px, 22vw, 118px);
       }
 
       .index-label {
         font-size: clamp(1.02rem, 3.1vw, 1.22rem);
         transform: translateY(12px);
-      }
-
-      .index-me {
-        margin-top: 0;
       }
 
       .section-head h2 {
@@ -619,8 +564,6 @@
       }
 
       .photo-card,
-      .photo-card.is-large,
-      .photo-card.is-wide,
       .photo-card.is-half,
       .photo-card.is-full {
         grid-column: 1 / -1;
@@ -651,7 +594,7 @@
   <div class="page">
     <aside class="profile" aria-label="프로필">
       <figure class="profile-photo">
-        <img src="./assets/profile.jpg" alt="안솔별 프로필 사진">
+        <img src="./assets/profile.jpg" alt="안솔별 프로필 사진" decoding="async" fetchpriority="high">
       </figure>
       <div class="profile-copy">
         <span class="eyebrow">PORTFOLIO</span>
@@ -674,19 +617,15 @@
         </div>
         <div class="hero-index" aria-label="사진 구성">
           <div class="index-card">
-            <img class="cloud-image" src="./assets/cloud-cutout.png" alt="" aria-hidden="true">
             <span class="index-label">친구와 나</span>
           </div>
           <div class="index-card">
-            <img class="cloud-image" src="./assets/cloud-cutout.png" alt="" aria-hidden="true">
             <span class="index-label">일하는 나</span>
           </div>
           <div class="index-card">
-            <img class="cloud-image" src="./assets/cloud-cutout.png" alt="" aria-hidden="true">
             <span class="index-label">퇴근 후 나</span>
           </div>
           <div class="index-card">
-            <img class="cloud-image" src="./assets/cloud-cutout.png" alt="" aria-hidden="true">
             <span class="index-label">가족과 나</span>
           </div>
         </div>
@@ -699,7 +638,7 @@
         </div>
         <div class="story-grid">
           <article class="photo-card is-full">
-            <img src="./assets/gallery/01_presentation-practice.jpg" alt="대학교 시절 팀원들과 발표 연습" style="--pos:center 42%">
+            <img src="./assets/gallery/01_presentation-practice.jpg" alt="대학교 시절 팀원들과 발표 연습" style="--pos:center 42%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#01 TEAM PRACTICE</span>
               <h3>발표 연습으로 다진 전달력</h3>
@@ -707,7 +646,7 @@
             </div>
           </article>
           <article class="photo-card is-half">
-            <img src="./assets/gallery/02_student-leadership.jpg" alt="학생회 리더십" style="--pos:center">
+            <img src="./assets/gallery/02_student-leadership.jpg" alt="학생회 리더십" style="--pos:center" loading="lazy" decoding="async">
             <div class="caption">
               <span>#02 LEADERSHIP</span>
               <h3>역할을 맡으면 끝까지 책임지는 태도</h3>
@@ -715,7 +654,7 @@
             </div>
           </article>
           <article class="photo-card is-half">
-            <img src="./assets/gallery/04_friendship.jpg" alt="친구들과 관계" style="--pos:center 44%">
+            <img src="./assets/gallery/04_friendship.jpg" alt="친구들과 관계" style="--pos:center 44%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#03 COMMUNICATION</span>
               <h3>편안한 관계 속에서 드러나는 소통</h3>
@@ -732,7 +671,7 @@
         </div>
         <div class="story-grid">
           <article class="photo-card is-full">
-            <img src="./assets/gallery/06_childcare-practice-2.jpg" alt="어린이집 실습 현장 2" style="--pos:58% 38%">
+            <img src="./assets/gallery/06_childcare-practice-2.jpg" alt="어린이집 실습 현장 2" style="--pos:58% 38%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#04 WARM APPROACH</span>
               <h3>웃음으로 먼저 다가가는 태도</h3>
@@ -740,7 +679,7 @@
             </div>
           </article>
           <article class="photo-card is-half">
-            <img src="./assets/gallery/05_childcare-practice-1.jpg" alt="어린이집 실습 현장 1" style="--pos:28% 56%">
+            <img src="./assets/gallery/05_childcare-practice-1.jpg" alt="어린이집 실습 현장 1" style="--pos:28% 56%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#05 PRACTICE</span>
               <h3>아이들의 눈높이에 맞춘 실습</h3>
@@ -748,7 +687,7 @@
             </div>
           </article>
           <article class="photo-card is-half">
-            <img src="./assets/gallery/07_childcare-practice-3.jpg" alt="어린이집 실습 현장 3" style="--pos:18% 50%">
+            <img src="./assets/gallery/07_childcare-practice-3.jpg" alt="어린이집 실습 현장 3" style="--pos:18% 50%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#06 CAREFUL OBSERVATION</span>
               <h3>가까이에서 반응을 살피는 섬세함</h3>
@@ -765,7 +704,7 @@
         </div>
         <div class="story-grid">
           <article class="photo-card is-full">
-            <img src="./assets/gallery/08_after-work.jpg" alt="일 마치면 자유롭게 시간을 보냄" style="--pos:center 48%">
+            <img src="./assets/gallery/08_after-work.jpg" alt="일 마치면 자유롭게 시간을 보냄" style="--pos:center 48%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#07 RECOVERY</span>
               <h3>일을 마친 뒤 회복하는 균형</h3>
@@ -782,7 +721,7 @@
         </div>
         <div class="story-grid">
           <article class="photo-card is-full">
-            <img src="./assets/gallery/12_family-photo.jpg" alt="가족사진" style="--pos:center 45%">
+            <img src="./assets/gallery/12_family-photo.jpg" alt="가족사진" style="--pos:center 45%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#08 FAMILY PHOTO</span>
               <h3>함께 모이면 안정되는 사람</h3>
@@ -790,7 +729,7 @@
             </div>
           </article>
           <article class="photo-card is-half">
-            <img src="./assets/gallery/09_mother-bond.jpg" alt="어머님과 끈끈한 사이" style="--pos:center 44%">
+            <img src="./assets/gallery/09_mother-bond.jpg" alt="어머님과 끈끈한 사이" style="--pos:center 44%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#09 FAMILY BOND</span>
               <h3>어머님과의 가까운 관계</h3>
@@ -798,7 +737,7 @@
             </div>
           </article>
           <article class="photo-card is-half">
-            <img src="./assets/gallery/10_family-harmony.jpg" alt="가족들과 화목함" style="--pos:center 48%">
+            <img src="./assets/gallery/10_family-harmony.jpg" alt="가족들과 화목함" style="--pos:center 48%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#10 HARMONY</span>
               <h3>함께 있을 때 더 밝아지는 가족</h3>
@@ -806,7 +745,7 @@
             </div>
           </article>
           <article class="photo-card is-half">
-            <img src="./assets/gallery/11_family-date.jpg" alt="가족들과 데이트" style="--pos:center 48%">
+            <img src="./assets/gallery/11_family-date.jpg" alt="가족들과 데이트" style="--pos:center 48%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#11 FAMILY DATE</span>
               <h3>작은 데이트도 소중히 여기는 마음</h3>
@@ -814,7 +753,7 @@
             </div>
           </article>
           <article class="photo-card is-half">
-            <img src="./assets/gallery/13_family-travel-beach.jpg" alt="가족들과 여행" style="--pos:center 76%">
+            <img src="./assets/gallery/13_family-travel-beach.jpg" alt="가족들과 여행" style="--pos:center 76%" loading="lazy" decoding="async">
             <div class="caption">
               <span>#12 TRAVEL</span>
               <h3>여행 속에서 넓어진 시야</h3>
